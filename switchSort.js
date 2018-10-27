@@ -1,16 +1,13 @@
 function switchSort(array) {
   let cashValue;
   let minIndex;
-  let minValue;
 
   for (let i = 0; i < array.length; i++) {
     minIndex = i;
-    minValue = array[i];
 
     for (let k = i; k < array.length; k++) {
-      if (minValue > array[k]) {
+      if (array[minIndex] > array[k]) {
         minIndex = k;
-        minValue = array[k];
       }
     }
 
