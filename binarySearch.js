@@ -35,7 +35,7 @@ function binarySearch(array, value) {
   let middlePoint = Math.floor(cloneArray.length / 2);
 
 
-  while (middlePoint > 0 && !result) {
+  while (middlePoint >= 0 && !result && cloneArray.length > 0) {
     if (cloneArray[middlePoint] === value) {
       result = true;
     } else if (cloneArray[middlePoint] > value) {
