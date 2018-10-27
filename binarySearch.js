@@ -1,3 +1,4 @@
+/* Рекурсивная версия */
 function binarySearch(array, value) {
   const arrayLength = array.length;
 
@@ -25,3 +26,32 @@ function getPartMassive(array, index, direction) {
   }
 }
 
+/* Нерекурсивная версия */
+
+function binarySearch(array, value) {
+  const arrayLength = array.length;
+  let cloneArray = array.slice();
+  let result = false;
+  let middlePoint = Math.floor(cloneArray.length / 2);
+
+
+  while (middlePoint > 0 && !result) {
+    if (cloneArray[middlePoint] === value) {
+      result = true;
+    } else if (cloneArray[middlePoint] > value) {
+      cloneArray = getPartMassive(cloneArray, middlePoint, 'left')
+    } else if (cloneArray[middlePoint] < value) {
+      cloneArray = getPartMassive(cloneArray, middlePoint, 'right')
+    }
+    middlePoint = Math.floor(cloneArray.length / 2);
+  }
+  return result;
+}
+
+function getPartMassive(array, index, direction) {
+  if (direction === 'right') {
+    return array.slice(index + 1);
+  } else {
+    return array.slice(0, index);
+  }
+}
