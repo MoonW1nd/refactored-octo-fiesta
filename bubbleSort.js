@@ -3,7 +3,7 @@ function bubbleSort(array) {
 
   for (let firstElementIndex = 0; firstElementIndex < array.length; firstElementIndex++) {
     let isSorted = true;
-    for (let secondElementIndex = 0; secondElementIndex < array.length; secondElementIndex++) {
+    for (let secondElementIndex = firstElementIndex - 1; secondElementIndex < array.length; secondElementIndex++) {
       if (array[firstElementIndex] < array[secondElementIndex]) {
         cashValue = array[firstElementIndex];
         array[firstElementIndex] = array[secondElementIndex];
