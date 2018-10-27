@@ -1,9 +1,8 @@
 function binarySearch(array, value) {
   const arrayLength = array.length;
 
-  if (arrayLength === 1) {
-    return array[0] === value;
-  }
+  if (arrayLength === 0) return false;
+  if (arrayLength === 1) return array[0] === value;
 
   const middlePoint = Math.floor(array.length / 2);
 
@@ -12,7 +11,7 @@ function binarySearch(array, value) {
   } else if (array[middlePoint] > value) {
     let newArray = getPartMassive(array, middlePoint, 'left')
     return binarySearch(newArray, value)
-  } else {
+  } else if (array[middlePoint] < value) {
     let newArray = getPartMassive(array, middlePoint, 'right')
     return binarySearch(newArray, value)
   }
