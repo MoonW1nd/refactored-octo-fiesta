@@ -1,4 +1,4 @@
-function switchSort(array) {
+function selectionSort(array) {
   let cashValue;
   let minIndex;
 
